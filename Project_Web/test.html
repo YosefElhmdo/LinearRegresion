@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Laptop Price Predictor</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<style>
+    .card{
+        width: 60%;
+        background-color: rgba(41, 36, 36, 0.856);
+        color: blue;
+        padding: 10%;
+    }
+    body{
+        background-color: rgb(20, 18, 18);
+        color: blue;
+    }
+</style>
+</head>
+<body>
+    <h1>Laptop Price Predictor</h1>
+    <div class="container card">
+    <form id="prediction-form" >
+      <div class="mb-3">
+        <label for="Company" class="form-label">Company:</label>
+        <select class="form-select" name="Company" id="Company" required>
+            <option selected>Choose...</option>
+            <option value="0">Acer</option>
+            <option value="1">Apple</option>
+            <option value="2">Asus</option>
+            <option value="3">Dell</option>
+            <option value="4">HP</option>
+            <option value="5">Lenovo</option>
+            <option value="6">MSI</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="Core" class="form-label">Core:</label>
+        <select class="form-select" name="Core" id="Core" required>
+            <option selected>Choose...</option>
+            <option value="0">AMD Ryzen</option>
+            <option value="3">Core i3</option>
+            <option value="2">Core i5</option>
+            <option value="1">Core i7</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="Generation" class="form-label">Generation 1 to 13:</label>
+        <input type="number" class="form-control" name="Generation" id="Generation"  placeholder="(1 to 13)"required>
+      </div>
+      <div class="mb-3">
+        <label for="GPUType" class="form-label">GPUType:</label>
+        <select class="form-select" name="GPUType" id="GPUType" required>
+            <option selected>Choose...</option>
+            <option value="0"> Built-in   </option>
+            <option value="1"> 960MX2G    </option>
+            <option value="2"> GTX10504G   </option>
+            <option value="3"> GTX10606G   </option>
+            <option value="4"> GTX16604G   </option>
+            <option value="5"> GTX1660TI6G </option>
+            <option value="6"> MX1002G     </option>
+            <option value="7"> MX1502G     </option>
+            <option value="8"> MX3502G     </option>
+            <option value="9"> RTX20606G   </option>
+            <option value="10">RTX30404G   </option>
+            <option value="11">RTX30504G   </option>
+            <option value="12">RTX3050TI6G </option>
+            <option value="13">RTX30606G   </option>
+            <option value="14">RTX30708G   </option>
+            <option value="15">RTX30808G   </option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="RAMSize" class="form-label">RAMSize:</label>
+        <select class="form-select" name="RAMSize" id="RAMSize" required>
+            <option selected>Choose...</option>
+            <option value="4">4 GB</option>
+            <option value="8">8 GB</option>
+            <option value="16">16 GB</option>
+            <option value="32">32 GB</option>
+            <option value="64">64 GB</option>
+            <option value="128">128 GB</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="HardType" class="form-label">HardType:</label>
+        <select class="form-select" name="HardType" id="HardType" required>
+            <option selected>Choose...</option>
+            <option value="0">HDD</option>
+            <option value="1">SSD M.2</option>
+            <option value="2">SSD SATA</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="HardSize" class="form-label">HardSize:</label>
+        <select class="form-select" name="HardSize" id="HardSize" required>
+            <option selected>Choose...</option>
+            <option value="128">128 GB</option>
+            <option value="256">256 GB</option>
+            <option value="512">512 GB</option>
+            <option value="1024">1024 GB</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="Material" class="form-label">Material :</label>
+        <select class="form-select" name="Material" id="Material" required>
+            <option selected> Choose...      </option>
+            <option value="3">Plastic       </option>
+            <option value="2">Metal         </option>
+            <option value="1">CarbonFiber    </option>
+            <option value="0">Aluminum      </option>
+            <option value="4">StainlessSteel</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="ColoreKeyboard" class="form-label">ColoreKeyboard :</label>
+        <select class="form-select" name="ColoreKeyboard" id="ColoreKeyboard" required>
+            <option selected>Choose...</option>
+            <option value="0">LED</option>
+            <option value="1">NO</option>
+            <option value="2">RGB </option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="TypeScreen" class="form-label">TypeScreen :</label>
+        <select class="form-select" name="TypeScreen" id="TypeScreen" required>
+            <option selected>Choose...</option>
+            <option value="0">IPS</option>
+            <option value="1">OLED</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="ScreenSize" class="form-label">ScreenSize:</label>
+        <select class="form-select" name="ScreenSize" id="ScreenSize" required>
+            <option selected>Choose...</option>
+            <option value="11.0">11.0</option>
+            <option value="14.0">14.0</option>
+            <option value="15.6">15.6</option>
+            <option value="17.3">17.3</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="Quality" class="form-label">Quality:</label>
+        <select class="form-select" name="Quality" id="Quality" required>
+            <option selected>Choose...</option>
+            <option value="0">2K</option>
+            <option value="1">4K</option>
+            <option value="2">8K</option>
+            <option value="3">FULL HD</option>
+            <option value="4">HD</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="condition" class="form-label">Condition:</label>
+        <select class="form-select" name="condition" id="condition" required>
+            <option selected>Choose...</option>
+            <option value="0">New</option>
+            <option value="1">Openbox</option>
+            <option value="2">Used</option>
+        </select>
+      </div>
+
+      <button type="button" class="btn btn-success" onclick="predictPrice()">Predict Price</button>
+      <button type="button" class="btn btn-primary" onclick="exportToExcel()">Export to Excel</button>
+    </form>
+
+    <h3>Predicted Price: <span id="predicted-price">-</span></h3>
+</div>
+    <script>
+        function predictPrice() {
+            const form = document.getElementById('prediction-form');
+            const formData = new FormData(form);
+
+            fetch('http://localhost:5000/predict', {
+                method: 'POST',
+                body: JSON.stringify(Object.fromEntries(formData.entries())),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                const predictedPrice = data.predicted_price;
+                document.getElementById('predicted-price').textContent = `$${predictedPrice.toFixed(2)}`;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+        function exportToExcel() {
+          const form = document.getElementById('prediction-form');
+          const formData = new FormData(form);
+          const data = {};
+          formData.forEach((value, key) => {
+              data[key] = value;
+          });
+
+          // Create a JSON Blob
+          const json = new Blob([JSON.stringify(data)], { type: 'application/json' });
+
+          // Create an anchor element to trigger the download
+          const a = document.createElement('a');
+          a.href = URL.createObjectURL(json);
+          a.download = 'laptop_data.json';
+          a.click();
+
+          // Release the object URL
+          URL.revokeObjectURL(a.href);
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</body>
+</html>
